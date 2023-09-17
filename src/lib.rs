@@ -4,8 +4,9 @@ pub mod build_csv;
 
 use parse_product::parse_product;
 use scraper::{Html, Selector};
+use serde::Serialize;
 
-#[derive(Debug)]
+#[derive(Serialize, Debug)]
 pub struct Product {
     pub url: String,
     pub image: String,
