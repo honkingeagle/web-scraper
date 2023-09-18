@@ -4,7 +4,7 @@ pub fn build_csv_file(products: Vec<Product>) {
     let mut wtr = Writer::from_path("products.csv").unwrap();
     for product in products {
         wtr.serialize(product).unwrap_or_else(|err| {
-            println!("Unable to serialize product: {}", err);
+            eprintln!("Unable to serialize product: {}", err);
         });
     }
 }
